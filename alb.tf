@@ -1,9 +1,9 @@
 # Create Database Security Group
-resource "aws_security_group" "database-sg" {
-  name        = "Database SG"
-  description = "Allow inbound traffic from application layer"
-  vpc_id      = aws_vpc.demovpc.id
-  }
+#resource "aws_security_group" "database-sg" {
+#  name        = "Database SG"
+#  description = "Allow inbound traffic from application layer"
+#  vpc_id      = aws_vpc.demovpc.id
+#  }
 
 resource "aws_security_group_rule" "ingress"{
   type              = "ingress"
