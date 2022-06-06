@@ -5,7 +5,7 @@ resource "aws_security_group" "database-sg" {
   vpc_id      = aws_vpc.demovpc.id
   }
 
-resource "Allow traffic from application layer" {
+resource "Allow traffic from application layer" "ingress"{
   type              = "ingress"
   from_port         = 3306
   to_port           = 3306
@@ -23,8 +23,8 @@ resource "Allow traffic from application layer" {
 #  }
 
 
-resource "aws_security_group_rule" {
-  type              = "engress"
+resource "aws_security_group_rule" "egress"{
+  type              = "egress"
   from_port         = 32768
   to_port           = 65535
   protocol          = "tcp"
