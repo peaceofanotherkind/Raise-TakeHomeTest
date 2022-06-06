@@ -20,14 +20,6 @@ depends_on = [
     aws_instance.demoinstance,
   ]
 }
-resource "aws_lb_target_group_attachment" "attachment" {
-  target_group_arn = aws_lb_target_group.external-alb.arn
-  target_id        = aws_instance.demoinstance1.id
-  port             = 80
-depends_on = [
-    aws_instance.demoinstance1,
-  ]
-}
 resource "aws_lb_listener" "external-elb" {
   load_balancer_arn = aws_lb.external-alb.arn
   port              = "80"
